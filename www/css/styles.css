@@ -1,43 +1,111 @@
 html {
   box-sizing: border-box;
-  font-family: "PT Serif", serif; }
+  font-family: "Open Sans", sans-serif; }
 
-body {
-  margin: 0; }
+html, body {
+  margin: 0;
+  height: 100%; }
 
 *, *:before, *:after {
   box-sizing: inherit; }
 
-#page-container {
-  max-width: 960px;
-  left: 50%;
-  transform: translateX(-50%);
+.bold {
+  font-weight: bold; }
+
+.italic {
+  font-style: italic; }
+
+.underline {
+  text-decoration: underline; }
+
+#top-bar .font-button {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+#sidebar {
+  width: 250px;
+  position: fixed;
+  left: 0;
+  top: 0;
   height: 100%;
-  position: relative;
-  padding-top: 65px; }
+  border-right: 1px solid gray; }
+  #sidebar .player-frame {
+    border-bottom: 1px solid gray;
+    padding: 10px; }
+    #sidebar .player-frame > .name {
+      margin-bottom: 5px; }
+    #sidebar .player-frame .progress-bar {
+      position: relative;
+      border: 1px solid lightgray;
+      padding: 4px;
+      text-align: center;
+      border-radius: 10px;
+      overflow: hidden; }
+      #sidebar .player-frame .progress-bar > div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: lightgray;
+        z-index: 2;
+        height: 100%; }
+      #sidebar .player-frame .progress-bar > p {
+        z-index: 3;
+        margin: 0;
+        position: relative; }
 
 #top-bar {
-  z-index: 100;
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 50px;
-  background-color: #f4dcff;
-  -webkit-box-shadow: 0px 4px 17px -4px rgba(0, 0, 0, 0.47);
-  -moz-box-shadow: 0px 4px 17px -4px rgba(0, 0, 0, 0.47);
-  box-shadow: 0px 4px 17px -4px rgba(0, 0, 0, 0.47); }
+  border-bottom: 1px solid grey;
+  padding-left: 20px;
+  font-size: 1.4em; }
+  #top-bar p {
+    line-height: 49px;
+    margin: 0 0 0 10px;
+    display: inline-block; }
+  #top-bar .font-button {
+    font-family: "PT Serif", serif;
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+    border-radius: 20px;
+    display: inline-block;
+    text-align: center;
+    margin-right: 9px;
+    box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.35);
+    cursor: pointer; }
+    #top-bar .font-button.active {
+      background: #d1d1d1;
+      box-shadow: none;
+      border: 1px solid black; }
+
+#editor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+  #editor.sidebar-margin {
+    left: 250px;
+    width: calc(100% - 250px); }
 
 #paper {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  max-width: 960px;
-  bottom: 0;
-  min-height: 500px;
-  padding: 20px;
+  font-family: "PT Serif", serif;
+  padding: 20px 20px 20px 20px;
+  height: calc(100% - 50px);
+  margin-top: 50px;
   text-align: left;
-  font-size: 1.6em;
-  z-index: 10; }
+  font-size: 1.6em; }
   #paper:focus {
     outline: 0px solid transparent; }
+  #paper:empty:not(:focus):before {
+    content: attr(placeholder);
+    color: lightgray;
+    display: block; }
 
 /*# sourceMappingURL=styles.css.map */

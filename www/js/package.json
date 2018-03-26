@@ -1,0 +1,18 @@
+{
+    "name": "writefight",
+    "version": "0.1",
+    "author": {
+        "name": "Renée Gyllensvaan",
+        "email": "renee.gyllensvaan@gmail.com"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "http://www.opensource.org/licenses/mit-license.php"
+        }
+    ],
+    "dependencies": {
+        "maquette": "^3.2.1",
+        "requirejs": "^2.3.5"
+    }
+}
